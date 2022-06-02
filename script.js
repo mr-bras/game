@@ -109,6 +109,7 @@ school.onclick = function(){
 				winner = 1
 				achiev = achiev + 1
 				player.style.display = 'block'
+				
 			}
 		}
 	}
@@ -125,9 +126,22 @@ school.onclick = function(){
         if (winner == 0){
             alert('не успел')
             main.style.display = 'block'
+            player.style.display = 'block'
 			location2.style.display = 'none'
 			body.style.backgroundImage = "url(bg1.png)"
 			body.style.backgroundSize = "cover"
+			quest.textContent = 'Столица канады?'
+			right.style.marginLeft ="300px";
+			right.style.marginTop ="140px";
+			wrong[2].style.marginTop ="0px";
+			wrong[0].style.marginLeft ="0px";
+			wrong[0].textContent ="Вариант 1: Ванкувер";
+			wrong[1].textContent ="Вариант 2: Монреаль";
+			wrong[2].textContent ="Вариант 3: Квебек";
+			wrong[3].textContent ="Вариант 4: Миссисауга";
+			wrong[4].textContent ="Вариант 5: Флорида";
+			right.textContent = 'Вариант 6: Оттава';
+			secs = 20;
         }
     }
 	let secs = 20;
@@ -136,6 +150,22 @@ school.onclick = function(){
      time.innerHTML = (--secs)
     }
     setTimeout(gameStop, 20000);
+    if (winner == 1){
+    	clearInterval(timer);
+    	secs = 20;
+    	quest.textContent = 'Столица канады?'
+			right.style.marginLeft ="300px";
+			right.style.marginTop ="140px";
+			wrong[0].style.marginLeft ="0px";
+			wrong[2].style.marginTop ="0px";
+			wrong[0].textContent ="Вариант 1: Ванкувер";
+			wrong[1].textContent ="Вариант 2: Монреаль";
+			wrong[2].textContent ="Вариант 3: Квебек";
+			wrong[3].textContent ="Вариант 4: Миссисауга";
+			wrong[4].textContent ="Вариант 5: Флорида";
+			right.textContent = 'Вариант 6: Оттава';
+			winner = 0
+    }
 }
 }
 

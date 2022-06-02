@@ -136,7 +136,9 @@
 			transition: 0.5s;
 		}
 
-
+		.loc2_variants_block{
+			display: flex; position: absolute; top: 70%;left: 2%; display:none;
+		}
 	
 		.loc4_variants_block{
 			display: flex; position: absolute; top: 19%;left: 3%; 
