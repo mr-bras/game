@@ -176,7 +176,18 @@ arena.onclick = function(){
 
 	let talk3 = document.querySelector(".loc3_talk");
 	let pktop = document.querySelector(".pekkahb");
-	
+
+
+ var radio1 = new Audio();
+      radio1.src = "pekka.ogg";
+      radio1.volume=0.4;
+      document.querySelector('.music1').onclick = function() {
+      
+  }	
+let pekka = new Audio();
+      pekka.src = "pekka.mp3";
+let pekka1 = new Audio();
+    pekka1.src = "pekka1.mp3";
 
 function back () {
 	main.style.display = 'block'
@@ -184,6 +195,7 @@ function back () {
 	body.style.backgroundImage = "url(bg1.png)"
 	body.style.backgroundSize = "cover"
 	pkup = 0
+	pktop.style.top = pkup + "px"
 }
 	function changeLocation3(){
 		main.style.display = 'none'
@@ -191,11 +203,13 @@ function back () {
 		body.style.background = "green"
 		hb[2].style.display = "block"
 		hb[3].style.display = "block"
+		radio1.play();
 		
 		let ptop = setInterval(pup,1000)
 	    function pup(){
 	     pkup = pkup + 30
 	     pktop.style.top = pkup + "px"
+	     pekka.play();
 	     if(pkup >= 420){
 	     	back()
 	     	clearInterval(ptop);
@@ -209,6 +223,7 @@ function back () {
 			pktop.style.display = "none"
 			shield.style.display = 'block'
 			achiev = achiev + 1
+			pekka1.play();
 			clearInterval(ptop);
 			setTimeout(back, 2000);
 			}
@@ -274,6 +289,7 @@ if (achiev == 3 ) {
 	hb[0].style.display = "block"
 	hb[1].style.display = "block"
 	atk.style.display = "block"
+
 }
 if(up==820&&left>=40&&left<=280){
 	atk.onclick = function(){
@@ -286,5 +302,22 @@ if(up==820&&left>=40&&left<=280){
 	}
 }
 })
+var radio = new Audio();
+      radio.src = "music.mp3";
+      radio.volume=0.1;
+
+      document.querySelector('.music').onclick = function() {
+      if (radio.paused == true) {
+      radio.play();
+      }
+
+       else {
+      radio.pause();
+      }
+    }
+   
+
+
+
 
 	
